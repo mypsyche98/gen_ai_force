@@ -1,0 +1,1 @@
+total 16-rw-r--r-- 1 root root  251 May 16 03:57 bandname1.py-rw-r--r-- 1 root root    0 May 16 04:24 ls_result.txt-rw-r--r-- 1 root root   53 May 16 03:39 mymod.pydrwxr-xr-x 2 root root 4096 May 16 03:39 __pycache__drwxr-xr-x 1 root root 4096 May 14 13:38 sample_data
