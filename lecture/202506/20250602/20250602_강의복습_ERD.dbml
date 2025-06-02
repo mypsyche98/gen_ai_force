@@ -1,0 +1,83 @@
+Table "SMPF_BUDGET" {
+  "BUDG_YYMM" TEXT [not null]
+  "CODE_TYPE" INTEGER
+  "DEPTH1_CODE" INTEGER
+  "DEPTH2_CODE" INTEGER
+  "BUDG_AMT" NUMERIC
+
+  Indexes {
+    (BUDG_YYMM, CODE_TYPE, DEPTH1_CODE, DEPTH2_CODE) [pk]
+  }
+}
+
+Table "SMPF_CODE" {
+  "CODE_TYPE" INTEGER [not null]
+  "DEPTH1_CODE" INTEGER [not null]
+  "DEPTH2_CODE" INTEGER [not null, default: 0]
+  "CODE_NAME" TEXT [not null]
+  "LICON_NAME" TEXT
+  "SICON_NAME" TEXT
+  "INCOME_TYPE" INTEGER
+  "DEFAULT_YN" TEXT [not null, default: 'N']
+  "CODE_LEVEL" INTEGER
+  "ORDER_SEQ" INTEGER
+  "USE_YN" TEXT [not null, default: 'Y']
+
+  Indexes {
+    (CODE_TYPE, DEPTH1_CODE, DEPTH2_CODE) [pk]
+  }
+}
+
+Table "SMPF_CONF" {
+  "BUDG_DAY" TEXT [not null]
+  "CAL_TYPE" TEXT [not null]
+  "HB_TYPE" TEXT [not null]
+
+  Indexes {
+    BUDG_DAY [pk]
+  }
+}
+
+Table "SMPF_DBVER" {
+  "DB_VER" TEXT [not null]
+  "UPDATE_DAY" TEXT
+
+  Indexes {
+    DB_VER [pk]
+  }
+}
+
+Table "SMPF_HOLIDAY" {
+  "HD_DT" TEXT [not null]
+  "HD_NM" TEXT
+  "USE_YN" TEXT [not null, default: 'Y']
+
+  Indexes {
+    HD_DT [pk]
+  }
+}
+
+Table "SMPF_INCOME" {
+  "INCOME_SEQ" INTEGER [not null]
+  "INCOME_DATE" TEXT [not null]
+  "CODE_TYPE" INTEGER [not null]
+  "DEPTH1_CODE" INTEGER [not null]
+  "DEPTH2_CODE" INTEGER [not null]
+  "INCOME_AMT" NUMERIC [not null, default: 0]
+  "INCOME_MEMO" TEXT
+  "INCOME_TYPE1" INTEGER
+  "INCOME_TYPE2" INTEGER
+  "REPEAT_TYPE" INTEGER
+  "REPEAT_DAY" TEXT
+  "REPEAT_START" TEXT
+  "REPEAT_END" TEXT
+  "ORG_SEQ" INTEGER
+  "PHOTO_NAME" TEXT
+  "MAP_LATITUDE" TEXT
+  "MAP_LONGITUDE" TEXT
+  "MAP_ADDR" TEXT
+
+  Indexes {
+    INCOME_SEQ [pk]
+  }
+}
