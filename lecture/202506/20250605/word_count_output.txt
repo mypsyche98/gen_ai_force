@@ -1,0 +1,4 @@
+"jack"	2
+"be"	2
+"nimble"	1
+"quic"	1
